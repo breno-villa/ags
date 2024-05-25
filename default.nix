@@ -7,20 +7,20 @@
 , pkg-config
 , ninja
 , gobject-introspection
-, gtk3
-, libpulseaudio
-, gjs
+#, gtk3
+#, libpulseaudio
+#, gjs
 , wrapGAppsHook
-, upower
-, gnome
-, gtk-layer-shell
-, glib-networking
-, networkmanager
-, libdbusmenu-gtk3
-, gvfs
-, libsoup_3
-, libnotify
-, pam
+#, upower
+#, gnome
+#, gtk-layer-shell
+#, glib-networking
+#, networkmanager
+#, libdbusmenu-gtk3
+#, gvfs
+#, libsoup_3
+#, libnotify
+#, pam
 , extraPackages ? [ ]
 , version ? "git"
 , buildTypes ? true
@@ -77,19 +77,19 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
-    gjs
-    gtk3
-    libpulseaudio
-    upower
+    gnome.gjs
+    gnome.gtk3
+    gnome.libpulseaudio
+    gnome.upower
     gnome.gnome-bluetooth
-    gtk-layer-shell
-    glib-networking
-    networkmanager
-    libdbusmenu-gtk3
-    gvfs
-    libsoup_3
-    libnotify
-    pam
+    gnome.gtk-layer-shell
+    gnome.glib-networking
+    gnome.networkmanager
+    gnome.libdbusmenu-gtk3
+    gnome.gvfs
+    gnome.libsoup_3
+    gnome.libnotify
+    #pam
   ] ++ extraPackages;
 
   outputs = [ "out" "lib" ];
