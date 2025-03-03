@@ -77,7 +77,7 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
-    gnome.gjs
+    gjs
     gnome.gtk3
     gnome.libpulseaudio
     gnome.upower
